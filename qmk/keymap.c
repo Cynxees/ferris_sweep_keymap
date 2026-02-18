@@ -76,15 +76,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /*
 
- | ESC | TAB | SS3 | SS4 | SS5 |       | HOME | PGDN | PGUP | END | DEL  |
- | trn | trn | trn | trn | trn |       | LEFT | DOWN | UP   | RGT | BSPC |
- | CAP | trn | trn | trn | trn |       |      |      |      |     | ENT  |
+ | ESC | TAB | SS3 | SS4 | SS5 |       | HOME | PGDN | PGUP | END  | DEL  |
+ | trn | trn | trn | trn | trn |       | BSPC | LEFT | DOWN | UP   | RGT  |
+ | CAP | trn | trn | trn | trn |       |      |      |      |      | ENT  |
              |     |     |             | BSPC | ENT  |
   trn = transparent (home row mods pass through)
   */
   [_FUNC_1] = LAYOUT(
     KC_ESC,  KC_TAB,  LCMD(S(KC_3)), LCMD(S(KC_4)), LCMD(S(KC_5)),    KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_DEL,
-    _______, _______, _______,       _______,       _______,           KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC,
+    _______, _______, _______,       _______,       _______,           KC_BSPC, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
     KC_CAPS, _______, _______,       _______,       _______,           _______, _______, _______, _______, KC_ENT,
                                     _______, _______, KC_BSPC, KC_ENT
   ),

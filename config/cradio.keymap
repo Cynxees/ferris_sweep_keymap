@@ -102,17 +102,17 @@
 
 /*
 
- | ESC | TAB | SS3 | SS4 | SS5 |       | HOME | PGDN | PGUP | END | DEL  |
- | trn | trn | trn | trn | trn |       | LEFT | DOWN | UP   | RGT | BSPC |
- | CAP | trn | trn | trn | trn |       |      |      |      |     | ENT  |
+ | ESC | TAB | SS3 | SS4 | SS5 |       | HOME | PGDN | PGUP | END  | DEL  |
+ | trn | trn | trn | trn | trn |       | BSPC | LEFT | DOWN | UP   | RGT  |
+ | CAP | trn | trn | trn | trn |       |      |      |      |      | ENT  |
              |     |     |             | BSPC | ENT  |
   trn = transparent (home row mods pass through)
   */
 
 		fnc_layer {
 		    bindings = <
-		&kp ESC  &kp TAB  &kp LG(LS(NUMBER_3)) &kp LG(LS(NUMBER_4)) &kp LG(LS(NUMBER_5))	&kp HOME  &kp PG_DN &kp PG_UP &kp END   &kp DEL
-		&trans   &trans   &trans                &trans                &trans    				&kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp BSPC
+		&kp ESC  &kp TAB  &kp LG(LS(NUMBER_3)) &kp LG(LS(NUMBER_4)) &kp LG(LS(NUMBER_5))	&kp HOME  &kp PG_DN &kp PG_UP &kp END    &kp DEL
+		&trans   &trans   &trans                &trans                &trans    				&kp BSPC  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
 		&kp CAPS &trans   &trans                &trans                &trans    				&none     &none     &none     &none     &kp ENTER
 					    				        &none                 &none  					&kp BSPC  &kp ENTER
 		>;
