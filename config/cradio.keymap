@@ -89,7 +89,7 @@
 		    bindings = <
 		&kp PRCNT  &kp CARET &kp PIPE   &kp HASH &bootloader 		&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 		&none      &none     &none      &none    &sys_reset  		&none  &none  &none  &none  &bt BT_CLR
-		&none      &none     &none      &none    &none    			&none  &none  &none  &none  &studio_unlock
+		&none      &none     &none      &none    &none    			&none  &none  &none  &none  &none
 					                    &none    &none  			&none  &none
 		>;
 		};	
