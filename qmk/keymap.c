@@ -9,7 +9,7 @@
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
 
-#define _QWERTY 0
+#define _DVORAK 0
 #define _SYMBOL_1 1
 #define _SYMBOL_2 2
 #define _FUNC_1 3
@@ -36,43 +36,43 @@ combo_t key_combos[COMBO_COUNT] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /*
-  
- | Q | W | E | R | T |       | Y | U | I | O | P |
- | A | S | D | F | G |       | H | J | K | L | ;: |
- | Z | X | C | V | B |       | N | M | ,< | .> | /? |
-          | FUN | SHIFT | | SPACE | SYMBOL |
+
+ | '  | ,  | .  | P | Y |       | F | G | C | R | L |
+ | A  | O  | E  | U | I |       | D | H | T | N | S |
+ | ;  | Q  | J  | K | X |       | B | M | W | V | Z |
+           | FUN | SHIFT | | SPACE | SYMBOL |
   */
-  [_QWERTY] = LAYOUT( /* QWERTY */
-    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,            KC_Y,    KC_U,  KC_I,    KC_O,   KC_P,
-    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,            KC_H,    KC_J,  KC_K,    KC_L,   KC_SCLN,
-    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,            KC_N,    KC_M,  KC_COMM, KC_DOT, KC_SLSH,
+  [_DVORAK] = LAYOUT( /* Programmer Dvorak */
+    KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,            KC_F,    KC_G,  KC_C,    KC_R,   KC_L,
+    KC_A,    KC_O,    KC_E,    KC_U,    KC_I,            KC_D,    KC_H,  KC_T,    KC_N,   KC_S,
+    KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,            KC_B,    KC_M,  KC_W,    KC_V,   KC_Z,
                                   MO(_FUNC_1), KC_LSFT, KC_SPC, MO(_SYMBOL_1)
   ),
 
   /*
-  
- | 1 | 2 | 3 | 4 | 5 |       | 6 | 7 | 8 | 9 | 0 |
- | # | _ | ( | [ | { |       | = | ? | ' | + | * |
- | $ | & | ) | ] | } |       | @ | ! | " | - | / |
+
+ | & | [ | { | } | ( |       | = | ) | * | ] | + |
+ | 9 | 7 | 5 | 3 | 1 |       | 0 | 2 | 4 | 6 | 8 |
+ | $ | _ | ! | ~ | ` |       | ? | / | @ | - | \ |
              |   | CMD |    |   |   |
   */
   [_SYMBOL_1] = LAYOUT(
-    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
-    KC_HASH, KC_UNDS, KC_LPRN, KC_LBRC, KC_LCBR,         KC_EQL , KC_QUES, KC_QUOT,   KC_PLUS, KC_ASTR,
-    KC_DLR , KC_AMPR, KC_RPRN, KC_RBRC, KC_RCBR,         KC_AT, KC_EXLM, KC_DQUO, KC_MINS, KC_SLSH,
+    KC_AMPR, KC_LBRC, KC_LCBR, KC_RCBR, KC_LPRN,        KC_EQL,  KC_RPRN, KC_ASTR, KC_RBRC, KC_PLUS,
+    KC_9,    KC_7,    KC_5,    KC_3,    KC_1,            KC_0,    KC_2,    KC_4,    KC_6,    KC_8,
+    KC_DLR,  KC_UNDS, KC_EXLM, KC_TILD, KC_GRV,         KC_QUES, KC_SLSH, KC_AT,   KC_MINS, KC_BSLS,
                                     _______, KC_LCMD, _______, _______
   ),
   
-   /*
-  
- | ` | \ | % |   |   |       |   |   |   |   |   |
- | ~ | | | ^ |   |   |       |   |   |   |   |   |
+  /*
+
+ | % | ^ | | | # |   |       |   |   |   |   |   |
+ |   |   |   |   |   |       |   |   |   |   |   |
  |   |   |   |   |   |       |   |   |   |   |   |
              |   |   |       |   |   |
   */
   [_SYMBOL_2] = LAYOUT(
-    KC_GESC, KC_BSLS, KC_PERC, _______, _______,         _______, _______, _______, _______, _______,
-    KC_TILD, KC_PIPE, KC_CIRC, _______, _______,         _______, _______, _______, _______, _______,
+    KC_PERC, KC_CIRC, KC_PIPE, KC_HASH, _______,         _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______,
                                     _______, _______, _______, _______
   ),
