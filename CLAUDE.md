@@ -16,13 +16,14 @@ qmk compile -kb ferris/sweep -km weevil
 ```
 
 ### ZMK
-ZMK builds via GitHub Actions. Push changes to trigger a build for `nice_nano_v2` with `cradio` shields (left/right). Build matrix is defined in `zmk/build.yaml`.
+ZMK builds via GitHub Actions. Push changes to trigger a build for `nice_nano_v2` with `cradio` shields (left/right). Build matrix is defined in `build.yaml` at the repo root.
 
 ## Architecture
 
 ### Dual-firmware structure
 - `qmk/` — QMK firmware keymap (`keymap.c`, `config.h`, `rules.mk`)
-- `zmk/` — ZMK firmware keymap (`config/cradio.keymap`, `config/cradio.conf`, `config/west.yml`, `build.yaml`)
+- `config/` — ZMK firmware keymap (`cradio.keymap`, `cradio.conf`, `west.yml`)
+- `build.yaml` — ZMK GitHub Actions build matrix (repo root)
 
 Both firmware versions implement the same 5-layer keymap. Changes to the keymap logic should be mirrored across both.
 
