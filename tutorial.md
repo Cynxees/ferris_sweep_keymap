@@ -1,38 +1,54 @@
 # Ferris Sweep Keyboard Tutorial
 
-This keyboard uses a **Programmer Dvorak** layout across 5 layers on a 34-key split keyboard.
+This keyboard uses a **Programmer Dvorak** layout with **home row mods** across 5 layers on a 34-key split keyboard.
 
 Set your macOS input source to **US (QWERTY)** — the keyboard firmware handles Dvorak, not the OS.
 
-## Physical Layout
+## Home Row Mods
+
+The home row keys double as modifiers when held:
 
 ```
-LEFT HAND                          RIGHT HAND
-,-----------,                      ,-----------,
-| 1| 2| 3| 4| 5|                  | 6| 7| 8| 9|10|
-| 1| 2| 3| 4| 5|                  | 6| 7| 8| 9|10|
-| 1| 2| 3| 4| 5|                  | 6| 7| 8| 9|10|
-            |LT|RT|          |LT|RT|
-            '-----'          '-----'
-LT = Left Thumb, RT = Right Thumb
+Left hand:               Right hand:
+A = tap A, hold Cmd      H = tap H, hold Shift
+O = tap O, hold Option   T = tap T, hold Ctrl
+E = tap E, hold Ctrl     N = tap N, hold Option
+U = tap U, hold Shift    S = tap S, hold Cmd
 ```
+
+This means you can combine any modifier with any key:
+- **Cmd+C** (copy): hold A + tap C
+- **Cmd+V** (paste): hold A + tap V
+- **Ctrl+C**: hold E + tap C
+- **Option+Enter**: hold O + hold left thumb (FNC) + tap ENTER
+- **Cmd+Arrow**: hold A + hold left thumb (FNC) + tap arrow key
+- **Cmd+Backspace**: hold A + hold left thumb (FNC) + tap BSPC
+- **Ctrl+Backspace**: hold E + hold left thumb (FNC) + tap BSPC
+- **Shift+letter**: hold U or H + tap letter
+
+Tips:
+- Use **left hand** modifiers with **right hand** keys and vice versa
+- Quick taps always produce the letter — modifiers only activate on deliberate holds
+- If you get accidental modifiers, slow down slightly when pressing home row keys
 
 ## Layer 0: Base (Programmer Dvorak)
 
-This is the default layer. Shift works normally (e.g. Shift+; = :, Shift+, = <, Shift+. = >).
+This is the default layer. Shift works normally (e.g. Shift+; = :, Shift+, = <).
 
 ```
 | ;  | ,  | .  | P  | Y  |       | F  | G  | C  | R  | L  |
-| A  | O  | E  | U  | I  |       | D  | H  | T  | N  | S  |
+| A* | O* | E* | U* | I  |       | D  | H* | T* | N* | S* |
 | '  | Q  | J  | K  | X  |       | B  | M  | W  | V  | Z  |
-            | FNC | SHIFT |       | SPACE | SYM |
+            | FNC | SPACE |       | ENTER | SYM |
 ```
 
+`*` = home row mod (hold for modifier)
+
 **Thumb keys:**
-- Left thumb inner (LT): Hold to activate Layer 3 (FNC)
-- Left thumb outer (RT): Shift
-- Right thumb inner (LT): Space
-- Right thumb outer (RT): Hold to activate Layer 1 (SYM)
+- Left inner: Hold to activate Layer 3 (FNC)
+- Left outer: Space
+- Right inner: Enter
+- Right outer: Hold to activate Layer 1 (SYM)
 
 ## Layer 1: Symbols (hold right thumb)
 
@@ -52,7 +68,7 @@ Hold the right thumb key (SYM) to access this layer.
 
 ## Layer 2: Extra Symbols + Bluetooth + System
 
-**Activate:** Press both right thumb keys at the same time (SPACE + SYM). Press the combo again to deactivate.
+**Activate:** Press both right thumb keys at the same time (ENTER + SYM). Press the combo again to deactivate.
 
 ```
 | %  | ^  | |  | #  | BOOT |     | BT0 | BT1 | BT2 | BT3 | BT4 |
@@ -71,47 +87,42 @@ Hold the right thumb key (SYM) to access this layer.
 - `CLR` — clear current Bluetooth pairing
 - `UNL` — unlock ZMK Studio for keymap editing
 
-## Layer 3: Navigation + macOS Shortcuts (hold left thumb)
+## Layer 3: Navigation + Utilities (hold left thumb)
 
-Hold the left thumb key (FNC) to access this layer.
+Hold the left thumb key (FNC) to access this layer. The left home and bottom rows are **transparent**, so home row mods still work — this lets you do Cmd+Arrow, Ctrl+Backspace, etc.
 
 ```
-| ESC |     | SS3 | SS4 | SS5 |   | C-← | C-↓ | C-↑ | C-→ |     |
-| TAB | CMD+S |   |     |     |   |  ←   |  ↓  |  ↑  |  →  |     |
-| CAP | CMD+X | CMD+C | CMD+V | CMD+Z | | CMD+SPC |  |  |  |     |
-            |     |       |       | BSPC | ENTER |
+| ESC | TAB | SS3 | SS4 | SS5 |   | HOME | PGDN | PGUP | END  | DEL  |
+| trn | trn | trn | trn | trn |   | LEFT | DOWN | UP   | RGT  | BSPC |
+| CAP | trn | trn | trn | trn |   |      |      |      |      | ENT  |
+            |     |     |         | BSPC | ENT  |
 ```
+
+`trn` = transparent (home row mods pass through from base layer)
 
 **Left side:**
 - `ESC`, `TAB`, `CAPS` — standard keys
 - `SS3` — Screenshot full screen (Cmd+Shift+3)
 - `SS4` — Screenshot selection (Cmd+Shift+4)
 - `SS5` — Screenshot menu (Cmd+Shift+5)
-- `CMD+S` — Save
-- `CMD+X/C/V/Z` — Cut / Copy / Paste / Undo
+- All other left keys: transparent (hold for modifiers)
 
 **Right side:**
-- Arrow keys (↑↓←→) on the home row
-- `Ctrl+Arrow` keys on the top row (macOS word/line navigation)
-- `CMD+SPACE` — Spotlight search
-- `BSPC` — Backspace (right thumb inner)
-- `ENTER` — Enter (right thumb outer)
+- Arrow keys on the home row
+- `HOME`, `END`, `PGUP`, `PGDN` on the top row
+- `DEL`, `BSPC`, `ENT` on the right column
+- Right thumbs: `BSPC` and `ENT`
 
-## Layer 4: F-Keys + Amethyst WM (combo left thumbs)
+## Layer 4: F-Keys (combo left thumbs)
 
-**Activate:** Press both left thumb keys at the same time (FNC + SHIFT). Press the combo again to deactivate.
+**Activate:** Press both left thumb keys at the same time (FNC + SPACE). Press the combo again to deactivate.
 
 ```
 | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  | F10 |
-| A-A | A-S | A-D | A-F | A-I |   | A-H | A-J | A-K | A-L |     |
-| F11 | F12 |     |     |     |   |AC-H |AC-J |AC-K |AC-L |     |
+|     |     |     |     |     |   |     |     |     |     |     |
+| F11 | F12 |     |     |     |   |     |     |     |     |     |
             |     |     |         |     |     |
 ```
-
-- **Top row:** F1–F10
-- **Bottom left:** F11, F12
-- **Middle row:** Amethyst WM shortcuts (Opt+Shift+letter)
-- **Bottom right:** Amethyst WM shortcuts (Opt+Shift+Ctrl+letter)
 
 ## Quick Reference
 
@@ -120,12 +131,22 @@ Hold the left thumb key (FNC) to access this layer.
 | Type letters | Base layer (Layer 0) |
 | Symbols & numbers | Hold right thumb (SYM) |
 | Extra symbols / BT | Press both right thumbs together |
-| Navigation / shortcuts | Hold left thumb (FNC) |
-| F-keys / Amethyst | Press both left thumbs together |
-| Backspace | Hold left thumb + right thumb inner |
-| Enter | Hold left thumb + right thumb outer |
-| Cmd+C (copy) | Hold left thumb + left middle 3 |
-| Cmd+V (paste) | Hold left thumb + left middle 4 |
+| Navigation / utilities | Hold left thumb (FNC) |
+| F-keys | Press both left thumbs together |
+| **Modifiers** | |
+| Cmd + key | Hold A (left) or S (right) + tap key |
+| Option + key | Hold O (left) or N (right) + tap key |
+| Ctrl + key | Hold E (left) or T (right) + tap key |
+| Shift + key | Hold U (left) or H (right) + tap key |
+| **Common shortcuts** | |
+| Cmd+C (copy) | Hold A + tap C |
+| Cmd+V (paste) | Hold A + tap V |
+| Cmd+Z (undo) | Hold S + tap Z |
+| Cmd+S (save) | Hold A + tap S |
+| Ctrl+C | Hold E + tap C |
+| Cmd+Arrow | Hold A + hold left thumb + arrow |
+| Cmd+Backspace | Hold A + hold left thumb + BSPC |
+| Ctrl+Backspace | Hold E + hold left thumb + BSPC |
+| Option+Enter | Hold O + hold left thumb + ENT |
 | Screenshot | Hold left thumb + top row 3/4/5 |
-| Switch BT device | Both right thumbs, then top right keys |
-| Flash firmware | Both right thumbs, then left top 5 (BOOT) |
+| Flash firmware | Both right thumbs → left top 5 (BOOT) |
